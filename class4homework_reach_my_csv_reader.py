@@ -11,11 +11,20 @@ data_path = "/home/rebecca/PycharmProjects/python-notebook/housing.data"
 
 if os.path.isfile(data_path):
     print("I have a file to process")
+
+    with open(data_path) as f:
+        for line in f:
+            print(line, end="")
+    print("\n")
+
+    print("Now, let's print each line as a list of values: \n")
+
+    with open(data_path) as f:
+        for line in f:
+            print(line.split())
 else:
     print("Boo, no file for me")
+    exit(1)
 
-with open(data_path) as f:
-    for line in f:
-        print(line.split())
 
 
